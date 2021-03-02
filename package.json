@@ -1,0 +1,21 @@
+{
+  "name": "project-backend-dentist-apointment",
+  "version": "1.0.0",
+  "description": "Backend with express and mysql Dentist Apointment",
+  "main": "index.js",
+  "scripts": {
+    "start_mysql":"docker-compose up -d",
+    "start":"nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tarek and Fede",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
+    "sequelize": "^6.5.0"
+  }
+}
