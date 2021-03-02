@@ -4,6 +4,6 @@ const router = require('express').Router();
 // REST RESOURCES
 
 //router.use('/users',userRouter);
-router.get('/',(req,res)=>{res('Hola!')});
+router.get('/',(req,res)=>{res.json('Hola!')});
 
 module.exports = router;
