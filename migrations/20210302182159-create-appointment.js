@@ -24,25 +24,28 @@ module.exports = {
       },
       date: {
         type: Sequelize.DATE,
-        required: true
-
+        allowNull: false
       },
       duration: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: "1h"
       },
       comment: {
         type: Sequelize.STRING
       },
       paid: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')
       }
     });
   },
