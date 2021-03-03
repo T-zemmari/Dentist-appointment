@@ -5,7 +5,7 @@ module.exports = {
     await queryInterface.bulkInsert('Users',[
       {
         email: "roberto@robertez.com",
-        password: "password123",
+        password: "$2b$10$RodsmbWGBrfUFd9taJX5AuY1tTuzj55jCVjIs2xH5WReeua2Aub0q",
         name: "Roberto",
         lastname: "Robertez",
         address: "Calle falsa 123, 46001 Valencia",
@@ -15,7 +15,7 @@ module.exports = {
       },
       {
         email: "federico@federiquez.com",
-        password: "password123",
+        password: "$2b$10$RodsmbWGBrfUFd9taJX5AuY1tTuzj55jCVjIs2xH5WReeua2Aub0q",
         name: "Federico",
         lastname: "Federiquez",
         address: "Calle fake 321, 28001 Madrid",
@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         email: "tarek@tarequez.com",
-        password: "password123",
+        password: "$2b$10$RodsmbWGBrfUFd9taJX5AuY1tTuzj55jCVjIs2xH5WReeua2Aub0q",
         name: "Tarek",
         lastname: "Tarequez",
         address: "Carrer Fals 234, 46002 Valencia",
