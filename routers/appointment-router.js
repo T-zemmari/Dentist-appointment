@@ -6,7 +6,7 @@ const appointmentController = require('../controller/appointment-controller');
 router.get('/',async (req,res) => {
     try{
         const uid = req.params.uid;
-        res.json(await appointmentController.getAllUserAppointments(uid));
+        res.json(await appointmentController.getAllUserAppointments(uid,req.query.pending));
     } catch(error) {
         res.status(500).json({message:error.message});
     }
