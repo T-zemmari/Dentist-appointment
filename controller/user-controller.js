@@ -18,6 +18,11 @@ class UserController{
        return User.findByPk(id)
  }
 
+ // get email from databae
+
+   async getuserByEmail(email){
+      return User.findOne({where:{email}})
+   }
 // creating a new User
 
    async create(userData){
