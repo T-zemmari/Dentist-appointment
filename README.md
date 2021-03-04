@@ -36,7 +36,7 @@ This project was created for educational purposes at <a href="https://geekshubsa
 
 ## Usage
 
-[Click here to view the API documentation](https://documenter.getpostman.com/view/14551874/Tz5iBMaE) or
+### <b>[Click here to view the API documentation](https://documenter.getpostman.com/view/14551874/Tz5iBMaE)</b> or
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e7eb70030ba882a484c1)
 
@@ -50,7 +50,7 @@ Alternatively, the project may be downloaded from <a href="https://github.com/T-
 
 ![Tareas hechas ](https://user-images.githubusercontent.com/76817211/110012463-d7ed2300-7d20-11eb-83d4-ae554e6c50b0.jpg)
 
-We have used Kanvan for the distribution of tasks, and there we have included the endpoints of the API.
+We have used Trello for the distribution and control of tasks using Kanban and to plan the database structure and the API endpoints.
 
 
 
