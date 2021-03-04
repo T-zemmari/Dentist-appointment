@@ -1,13 +1,15 @@
-const config = require('./config/config.json');
+let config = require('./config/config.json');
+const environment = process.env.NODE_ENV || 'development';
+config = config[environment];
 
 const {Sequelize, DataTypes} = require('sequelize');
 const sequelize = new Sequelize(
-    process.env.MYSQL_DATABASE || config.development.database,
-    process.env.MYSQL_USER || config.development.username,
-    process.env.MYSQL_PASSWORD || config.development.password,
+    process.env.MYSQL_DATABASE || config.database,
+    process.env.MYSQL_USER || config.username,
+    process.env.MYSQL_PASSWORD || config.password,
     {
-        host: process.env.MYSQL_HOST || config.development.host,
-        port: process.env.MYSQL_PORT || config.development.port || '3306',
+        host: process.env.MYSQL_HOST || config.host,
+        port: process.env.MYSQL_PORT || config.port || '3306',
         dialect: 'mysql',
         operatorAliases: false,
         pool: {
