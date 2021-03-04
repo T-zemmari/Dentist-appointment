@@ -1,9 +1,12 @@
 const router = require('express').Router();
 const userController = require('../controller/user-controller');
 const appointmentRouter = require('./appointment-router');
+const authenticate = require('../middleware/authenticate')
 
 
-router.use('/:uid/appointments',appointmentRouter);
+router.use('/:uid/appointments',authenticate,appointmentRouter);
+
+
 
 /*
 
@@ -22,7 +25,7 @@ router.get('/', async (req, res) => {
 
 // logout
 
-router.get('/:id/logout', async (req, res) => {
+router.get('/:id/logout', authenticate, async (req, res) => {
 
     try {
         id = req.params.id;
@@ -36,7 +39,7 @@ router.get('/:id/logout', async (req, res) => {
 
 // getting user data
 
-router.get('/:id', async (req, res) => {
+router.get('/:id',authenticate, async (req, res) => {
 
     try {
         id = req.params.id
