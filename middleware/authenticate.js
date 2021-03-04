@@ -11,8 +11,9 @@ const authenticate =  (req,res,next)=>{
         
       let token =  req.headers.authorization.split(' ')[1];
     
-       jwt.verify(token,secret);
-      if(jwt.userId != req.params.id){
+      let auth=  jwt.verify(token,secret);
+      
+      if(auth.userId != req.params.id){
           throw new Error('No se ha conseguido la verficiacion')
       }
       return next();

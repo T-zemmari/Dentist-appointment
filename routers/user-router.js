@@ -4,7 +4,7 @@ const appointmentRouter = require('./appointment-router');
 const authenticate = require('../middleware/authenticate')
 
 
-router.use('/:uid/appointments',authenticate,appointmentRouter);
+router.use('/:id/appointments',authenticate,appointmentRouter);
 
 
 

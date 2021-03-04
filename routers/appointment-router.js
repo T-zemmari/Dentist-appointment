@@ -5,7 +5,7 @@ const appointmentController = require('../controller/appointment-controller');
 
 router.get('/',async (req,res) => {
     try{
-        const uid = req.params.uid;
+        const uid = req.params.id;
         res.json(await appointmentController.getAllUserAppointments(uid,req.query.pending));
     } catch(error) {
         res.status(500).json({message:error.message});
@@ -14,10 +14,10 @@ router.get('/',async (req,res) => {
 
 // Get one appointment data
 
-router.get('/:id',async (req,res) => {
+router.get('/:aid',async (req,res) => {
     try{
-        const uid = req.params.uid;
-        const id = req.params.id;
+        const uid = req.params.id;
+        const id = req.params.aid;
         res.json(await appointmentController.getAppointmentData(uid,id));
     } catch(error) {
         res.status(500).json({message:error.message});
@@ -28,7 +28,7 @@ router.get('/:id',async (req,res) => {
 
 router.post('/',async (req,res) => {
     try{
-        const uid = req.params.uid;
+        const uid = req.params.id;
         req.body.userId = uid;
         res.json(await appointmentController.create(req.body));
     } catch(error) {
@@ -38,10 +38,10 @@ router.post('/',async (req,res) => {
 
 // Cancel appointment
 
-router.delete('/:id',async (req,res) => {
+router.delete('/:aid',async (req,res) => {
     try{
-        const uid = req.params.uid;
-        const id = req.params.id;
+        const uid = req.params.id;
+        const id = req.params.aid;
         res.json(await appointmentController.delete(uid,id));
     } catch(error) {
         res.status(500).json({message:error.message});
