@@ -20,6 +20,20 @@ router.get('/', async (req, res) => {
 
 */
 
+// logout
+
+router.get('/:id/logout', async (req, res) => {
+
+    try {
+        id = req.params.id;
+        res.status(200).json({status:'success',message:'User successfully logged out.',do:['deleteToken','goToHome']})
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        })
+    }
+})
+
 // getting user data
 
 router.get('/:id', async (req, res) => {
