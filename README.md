@@ -46,6 +46,14 @@ Alternatively, the project may be downloaded from <a href="https://github.com/T-
 
 <div id="environment"></div>
 
+##  Trello
+
+![Tareas hechas ](https://user-images.githubusercontent.com/76817211/110012463-d7ed2300-7d20-11eb-83d4-ae554e6c50b0.jpg)
+
+We have used Kanvan for the distribution of tasks, and there we have included the endpoints of the API.
+
+
+
 ## Environment variables summary
 
 * NODE_ENV: development/production - Changes default settings (default: development)
