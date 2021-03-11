@@ -8,9 +8,9 @@ router.use('/:id/appointments',authenticate,appointmentRouter);
 
 
 
-/*
 
-router.get('/', async (req, res) => {
+
+/*router.get('/', async (req, res) => {
 
     try {
         res.json(await userController.getAllUsers())
@@ -58,6 +58,7 @@ router.post('/', async (req, res) => {
 
     try {
         let userData = req.body;
+        console.log('estoy aqui')
         res.status(200).json(await userController.create(userData))
     } catch (error) {
         res.status(500).json({
