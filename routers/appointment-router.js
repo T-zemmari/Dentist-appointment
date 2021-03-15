@@ -5,8 +5,14 @@ const appointmentController = require('../controller/appointment-controller');
 
 router.get('/',async (req,res) => {
     try{
+        console.log('lo que sea ')
         const uid = req.params.id;
+        if(uid){
         res.json(await appointmentController.getAllUserAppointments(uid,req.query.pending));
+        }else{
+            res.json(await appointmentController.getAllAppointments(req.query.pending)); 
+            
+        }
     } catch(error) {
         res.status(500).json({message:error.message});
     }

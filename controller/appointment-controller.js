@@ -4,8 +4,23 @@ const { Op } = require('sequelize');
 
 class AppointmentController{
 
-    // Getting a list of all user appointments
+    // Getting a list of all appointments
+
+    async getAllAppointments(pending){
+        if (pending!='true')
+        return Appointment.findAll();
+        else
+        return Appointment.findAll({
+            where:{
+                
+                date:{[Op.gte]: new Date}
+            }
+        });
+    }
+    
+    // Getting a list of all users appointments
   
+
     async getAllUserAppointments(id,pending){
         if (pending!='true')
         return Appointment.findAll({where:{userId:id}});

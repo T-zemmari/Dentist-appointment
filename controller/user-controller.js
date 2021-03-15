@@ -26,6 +26,7 @@ class UserController{
 // creating a new User
 
    async create(userData){
+    userData.admin =false;
     let password =userData.password;
     let passwordHashed = bcrypt.hashSync(password,10)
     userData.password= passwordHashed;
