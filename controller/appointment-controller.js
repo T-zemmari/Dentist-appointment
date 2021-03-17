@@ -1,4 +1,4 @@
-const {Appointment} = require('../models');
+const {Appointment, User, sequelize} = require('../models');
 const { Op } = require('sequelize');
 
 
@@ -8,13 +8,37 @@ class AppointmentController{
 
     async getAllAppointments(pending){
         if (pending!='true')
-        return Appointment.findAll();
+        return Appointment.findAll({
+            include: [
+                {
+                    model: User,
+                    on: {
+                        col1: sequelize.where(sequelize.col("Appointment.userId"), "=", sequelize.col("User.id"))
+                    },
+                    attributes: ['name','lastname']
+                }
+            ],
+            order: [
+                ['date', 'DESC']
+            ]
+        });
         else
         return Appointment.findAll({
             where:{
-                
                 date:{[Op.gte]: new Date}
-            }
+            },
+            include: [
+                {
+                    model: User,
+                    on: {
+                        col1: sequelize.where(sequelize.col("Appointment.userId"), "=", sequelize.col("User.id"))
+                    },
+                    attributes: ['name','lastname']
+                }
+            ],
+            order: [
+                ['date', 'ASC']
+            ]
         });
     }
     
@@ -23,13 +47,21 @@ class AppointmentController{
 
     async getAllUserAppointments(id,pending){
         if (pending!='true')
-        return Appointment.findAll({where:{userId:id}});
+        return Appointment.findAll({
+            where:{userId:id},
+            order: [
+                ['date', 'DESC']
+            ]
+        });
         else
         return Appointment.findAll({
             where:{
                 userId:id,
                 date:{[Op.gte]: new Date}
-            }
+            },
+            order: [
+                ['date', 'ASC']
+            ]
         });
     }
   
