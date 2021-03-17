@@ -35,8 +35,9 @@ class UserController{
 
  //  updating user data
 
-   async update(id){
-       return User.findByPkAndUpdate(id)
+   async update(id,user){
+      await User.update(user,{where:{id}})
+       return this.getUserData(id)
    }
 
 //   removing user data

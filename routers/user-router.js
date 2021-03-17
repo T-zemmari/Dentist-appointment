@@ -67,22 +67,25 @@ router.post('/', async (req, res) => {
     }
 })
 
-/*
 
-router.put('/:id', async (req, res) => {
+
+router.put('/:id',authenticate, async (req, res) => {
     try {
-        let id = req.body.params.id;
+        let id = req.params.id;
+     console.log(id)
         res.status(200).json(await userController.update(id,req.body))
-    } catch (error) {
+        console.log(req.body);
+    }catch(error){
+        console.log(error.message);
         res.status(500).json({
             message: error.message
         });
     }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authenticate, async (req, res) => {
     try {
-        let id = req.body.params;
+        let id = req.params.id;
         res.status(200).json(await userController.delete(id))
     } catch (error) {
         res.status(500).json({
@@ -91,7 +94,7 @@ router.delete('/:id', async (req, res) => {
     }
 })
 
-*/
+
 
 
 
