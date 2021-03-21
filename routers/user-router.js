@@ -7,9 +7,6 @@ const authenticate = require('../middleware/authenticate')
 router.use('/:id/appointments',authenticate,appointmentRouter);
 
 
-
-
-
 /*router.get('/', async (req, res) => {
 
     try {
@@ -58,7 +55,6 @@ router.post('/', async (req, res) => {
 
     try {
         let userData = req.body;
-        console.log('estoy aqui')
         res.status(200).json(await userController.create(userData))
     } catch (error) {
         res.status(500).json({
@@ -83,6 +79,8 @@ router.put('/:id',authenticate, async (req, res) => {
     }
 })
 
+/*
+
 router.delete('/:id', authenticate, async (req, res) => {
     try {
         let id = req.params.id;
@@ -94,17 +92,7 @@ router.delete('/:id', authenticate, async (req, res) => {
     }
 })
 
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 module.exports = router;
